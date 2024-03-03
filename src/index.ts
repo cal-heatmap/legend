@@ -24,7 +24,7 @@ const defaultOptions: LegendOptions = {
 export default class Legend implements ILegend {
   static readonly VERSION = VERSION;
 
-  calendar: CalHeatmap;
+  calendar!: CalHeatmap;
 
   root: any;
 
@@ -32,18 +32,22 @@ export default class Legend implements ILegend {
 
   options: LegendOptions;
 
-  constructor(calendar: CalHeatmap) {
-    this.calendar = calendar;
+  constructor() {
     this.root = null;
     this.shown = false;
     this.options = defaultOptions;
   }
 
-  setup(pluginOptions?: Partial<LegendOptions>): void {
+  setup(calendar: CalHeatmap, pluginOptions?: Partial<LegendOptions>): void {
+    this.calendar = calendar;
     this.options = { ...defaultOptions, ...pluginOptions };
   }
 
   paint(): Promise<unknown> {
+    if (!this.calendar) {
+      throw new Error('Calendar is not initialized.');
+    }
+
     const scaleOptions = this.calendar.options.options.scale;
     const { enabled, itemSelector } = this.options;
 

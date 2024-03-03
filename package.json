@@ -32,7 +32,7 @@
     "./legend.css": "./dist/legend.css"
   },
   "peerDependencies": {
-    "cal-heatmap": "4.3.0-beta.1"
+    "cal-heatmap": "4.3.0-beta.3"
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.13",
@@ -47,7 +47,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@types/d3-selection": "^3.0.10",
+    "@types/d3": "^7.4.3",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
