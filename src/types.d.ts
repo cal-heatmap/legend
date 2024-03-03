@@ -11,6 +11,8 @@ export interface ILegend extends IPlugin {
 }
 
 export default class Legend {
+  static readonly VERSION: string;
+
   calendar: CalHeatmap;
 
   options: PluginOptions;
